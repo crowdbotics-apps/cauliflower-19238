@@ -36,18 +36,14 @@ class HomePage(models.Model):
 class Location(models.Model):
     "Generated Model"
     name = models.CharField(max_length=256,)
-    address = models.CharField(max_length=256,)
-    state = models.CharField(max_length=256,)
-    zip = models.CharField(max_length=256,)
 
 
 class Stores(models.Model):
     "Generated Model"
-    name = models.CharField(max_length=256,)
     location = models.ForeignKey(
         "home.Location",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="stores_location",
     )
