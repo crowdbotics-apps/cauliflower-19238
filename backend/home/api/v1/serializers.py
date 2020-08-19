@@ -10,6 +10,7 @@ from rest_framework import serializers
 from rest_auth.serializers import PasswordResetSerializer
 from home.models import (
     CustomText,
+    Description,
     HomePage,
     Inventory,
     Location,
@@ -126,4 +127,10 @@ class NameSerializer(serializers.ModelSerializer):
 class LokationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lokation
+        fields = "__all__"
+
+
+class DescriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Description
         fields = "__all__"

@@ -2,6 +2,7 @@ from rest_framework import viewsets
 from rest_framework import authentication
 from .serializers import (
     CustomTextSerializer,
+    DescriptionSerializer,
     HomePageSerializer,
     InventorySerializer,
     LocationSerializer,
@@ -25,6 +26,7 @@ from home.api.v1.serializers import (
 )
 from home.models import (
     CustomText,
+    Description,
     HomePage,
     Inventory,
     Location,
@@ -124,3 +126,12 @@ class LokationViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Lokation.objects.all()
+
+
+class DescriptionViewSet(viewsets.ModelViewSet):
+    serializer_class = DescriptionSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Description.objects.all()

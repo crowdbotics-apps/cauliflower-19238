@@ -65,6 +65,13 @@ class Storez(models.Model):
     inventory = models.ForeignKey(
         "home.Inventory", on_delete=models.CASCADE, related_name="storez_inventory",
     )
+    description = models.ForeignKey(
+        "home.Description",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="storez_description",
+    )
 
 
 class Name(models.Model):
@@ -78,3 +85,8 @@ class Lokation(models.Model):
     address2 = models.CharField(max_length=256,)
     state = models.CharField(max_length=5,)
     zip = models.IntegerField()
+
+
+class Description(models.Model):
+    "Generated Model"
+    description = models.CharField(max_length=256,)
