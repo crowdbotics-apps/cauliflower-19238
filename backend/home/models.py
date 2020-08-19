@@ -47,3 +47,34 @@ class Stores(models.Model):
         on_delete=models.CASCADE,
         related_name="stores_location",
     )
+
+
+class Inventory(models.Model):
+    "Generated Model"
+    item = models.CharField(max_length=256,)
+
+
+class Storez(models.Model):
+    "Generated Model"
+    name = models.ForeignKey(
+        "home.Name", on_delete=models.CASCADE, related_name="storez_name",
+    )
+    location = models.ForeignKey(
+        "home.Lokation", on_delete=models.CASCADE, related_name="storez_location",
+    )
+    inventory = models.ForeignKey(
+        "home.Inventory", on_delete=models.CASCADE, related_name="storez_inventory",
+    )
+
+
+class Name(models.Model):
+    "Generated Model"
+    name = models.CharField(max_length=50,)
+
+
+class Lokation(models.Model):
+    "Generated Model"
+    address1 = models.CharField(max_length=256,)
+    address2 = models.CharField(max_length=256,)
+    state = models.CharField(max_length=5,)
+    zip = models.IntegerField()

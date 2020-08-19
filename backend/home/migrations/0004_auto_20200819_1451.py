@@ -6,24 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0003_location_stores'),
+        ("home", "0003_location_stores"),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='location',
-            name='address',
-        ),
-        migrations.RemoveField(
-            model_name='location',
-            name='state',
-        ),
-        migrations.RemoveField(
-            model_name='location',
-            name='zip',
-        ),
-        migrations.RemoveField(
-            model_name='stores',
-            name='name',
-        ),
+        migrations.RemoveField(model_name="location", name="address",),
+        migrations.RemoveField(model_name="location", name="state",),
+        migrations.RemoveField(model_name="location", name="zip",),
+        migrations.RemoveField(model_name="stores", name="name",),
     ]
