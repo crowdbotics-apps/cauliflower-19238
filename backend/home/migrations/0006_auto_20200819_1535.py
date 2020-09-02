@@ -7,20 +7,34 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0005_inventory_lokation_name_storez'),
+        ("home", "0005_inventory_lokation_name_storez"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Description',
+            name="Description",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.CharField(max_length=256)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("description", models.CharField(max_length=256)),
             ],
         ),
         migrations.AddField(
-            model_name='storez',
-            name='description',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='storez_description', to='home.Description'),
+            model_name="storez",
+            name="description",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="storez_description",
+                to="home.Description",
+            ),
         ),
     ]

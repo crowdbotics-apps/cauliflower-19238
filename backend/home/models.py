@@ -7,7 +7,9 @@ from django.db import models
 
 
 class CustomText(models.Model):
-    title = models.CharField(max_length=150,)
+    title = models.CharField(
+        max_length=150,
+    )
 
     def __str__(self):
         return self.title
@@ -35,7 +37,9 @@ class HomePage(models.Model):
 
 class Location(models.Model):
     "Generated Model"
-    name = models.CharField(max_length=256,)
+    name = models.CharField(
+        max_length=256,
+    )
 
 
 class Stores(models.Model):
@@ -51,42 +55,65 @@ class Stores(models.Model):
 
 class Inventory(models.Model):
     "Generated Model"
-    item = models.CharField(max_length=256,)
+    item = models.CharField(
+        max_length=256,
+    )
 
 
 class Storez(models.Model):
     "Generated Model"
     name = models.ForeignKey(
-        "home.Name", on_delete=models.CASCADE, related_name="storez_name",
+        "home.Name",
+        on_delete=models.CASCADE,
+        related_name="storez_name",
     )
     location = models.ForeignKey(
-        "home.Lokation", on_delete=models.CASCADE, related_name="storez_location",
+        "home.Lokation",
+        on_delete=models.CASCADE,
+        related_name="storez_location",
     )
     inventory = models.ForeignKey(
-        "home.Inventory", on_delete=models.CASCADE, related_name="storez_inventory",
+        "home.Inventory",
+        on_delete=models.CASCADE,
+        related_name="storez_inventory",
     )
     description = models.ForeignKey(
         "home.Description",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="storez_description",
+    )
+    contact = models.CharField(
+        max_length=256,
+        null=True,
+        blank=True,
     )
 
 
 class Name(models.Model):
     "Generated Model"
-    name = models.CharField(max_length=50,)
+    name = models.CharField(
+        max_length=50,
+    )
 
 
 class Lokation(models.Model):
     "Generated Model"
-    address1 = models.CharField(max_length=256,)
-    address2 = models.CharField(max_length=256,)
-    state = models.CharField(max_length=5,)
+    address1 = models.CharField(
+        max_length=256,
+    )
+    address2 = models.CharField(
+        max_length=256,
+    )
+    state = models.CharField(
+        max_length=5,
+    )
     zip = models.IntegerField()
 
 
 class Description(models.Model):
     "Generated Model"
-    description = models.CharField(max_length=256,)
+    description = models.CharField(
+        max_length=256,
+    )

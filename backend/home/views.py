@@ -1,6 +1,16 @@
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
-from .models import Stores, HomePage, CustomText, Location
+from .models import (
+    Lokation,
+    Name,
+    Storez,
+    Stores,
+    Inventory,
+    Location,
+    HomePage,
+    Description,
+    CustomText,
+)
 
 
 def home(request):

@@ -29,7 +29,10 @@ class SignupSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "email", "password")
         extra_kwargs = {
             "password": {"write_only": True, "style": {"input_type": "password"}},
-            "email": {"required": True, "allow_blank": False,},
+            "email": {
+                "required": True,
+                "allow_blank": False,
+            },
         }
 
     def _get_request(self):
